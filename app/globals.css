@@ -2,26 +2,58 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
-}
-
 body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  @apply bg-light text-base flex justify-center items-center text-gray-500
 }
+
+.input-field {
+  @apply border rounded-md border-gray-400 hover:border-dark p-2 active:border-dark active:bg-light focus:border-dark focus:outline-0
+}
+
+.btn {
+  @apply bg-dark w-full text-white font-bold rounded-md py-3
+}
+
+.error {
+  @apply border-error
+}
+
+.popup {
+  @apply fixed top-3 left-1/2 w-8/12 transform -translate-x-1/2 bg-slate-800 p-6 rounded-lg text-white
+}
+
+    /* Style for checkboxes */
+    input[type="checkbox"] {
+        /* Hide the default checkbox */
+        appearance: none;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        width: 18px;
+        height: 18px;
+        border: 2px solid hsl(169, 82%, 27%); /* Border color */
+        border-radius: 3px;
+        outline: none;
+        cursor: pointer;
+        margin-right: 10px;
+    }
+
+    /* Style for the checkmark */
+    input[type="checkbox"]::before {
+        content: '\2714'; /* Unicode checkmark character */
+        display: block;
+        width: 100%;
+        height: 100%;
+        text-align: center;
+        line-height: 18px; /* Adjust based on checkbox size */
+        color: white; /* Change the color of the checkmark here */
+        font-size: 14px; /* Adjust the size of the checkmark */
+        background-color: white;
+    }
+
+    /* Style for checked checkboxes */
+    input[type="checkbox"]:checked::before {
+        content: '\2714'; /* Unicode checkmark character */
+        background-color: hsl(169, 82%, 27%); /* Change the color of the checkmark when checked */
+        color: white;
+    }
+
