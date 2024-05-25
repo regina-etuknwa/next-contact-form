@@ -4,7 +4,7 @@ import { Karla } from 'next/font/google'
 const karla = Karla({ subsets: ['latin'] })
 
 export const metadata = {
-  title: 'Next.js Form',
+  title: 'Contact Form (Next.js)',
   description: 'Frontend Mentor project',
 }
 
